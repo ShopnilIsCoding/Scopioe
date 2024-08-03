@@ -12,15 +12,18 @@ import Home from './pages/Home';
 import AuthProvider from './Providers/AuthProvider';
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoutes from './Routes/PrivateRoutes';
+import ErrorElement from './components/ErrorElement';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
+    errorElement:<ErrorElement></ErrorElement>,
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<PrivateRoutes><Home></Home></PrivateRoutes>
       }
     ]
   },
