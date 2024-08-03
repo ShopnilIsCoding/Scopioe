@@ -7,11 +7,19 @@ import {
 import './index.css'
 import Login from './pages/Login';
 import 'animate.css';
+import RootLayout from './RootLayout/RootLayout';
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div className=''>Hello world!</div>,
+    element: <RootLayout></RootLayout>,
+    children:[
+      {
+        path:'/',
+        element:<Home></Home>
+      }
+    ]
   },
   {
     path:"/login",
