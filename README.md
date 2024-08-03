@@ -16,8 +16,8 @@ Make sure you have the following installed on your system:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ShopnilIsCoding/Jobnest-Client.git
-   cd jobnest
+   git clone https://github.com/ShopnilIsCoding/Scopioe.git
+   cd Scopioe
 2. Install dependencies:
    ```bash
    npm install
