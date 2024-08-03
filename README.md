@@ -31,7 +31,7 @@ Make sure you have the following installed on your system:
 3. Set up Firebase:
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
    - Add a web app to your Firebase project.
-   - Copy your Firebase configuration details and create a `.env` file in the root directory with the following content:
+   - Copy your Firebase configuration details and create a `.env.local` file in the root directory with the following content:
      ```plaintext
      VITE_FIREBASE_API_KEY=your_api_key
      VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
