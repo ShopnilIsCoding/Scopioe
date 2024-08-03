@@ -89,7 +89,7 @@ const Form = ({ signUp, setSignUp }) => {
               className="flex items-center gap-2 bg-[linear-gradient(91deg,_#E4E4E4_3.94%,_#FFF9_69.53%)] shadow-[0px_4px_7px_0px_rgba(131,131,131,0.23)] px-4 lg:px-10 py-4 rounded-[6px]"
             >
               <FcGoogle className="text-3xl" />
-              <span className="text-xl font-semibold">Continue with Google</span>
+              <span className="text-xl font-semibold"> Google</span>
             </button>
             <button className="flex items-center gap-2 px-4 lg:px-10 py-4 rounded-[10px] bg-[linear-gradient(89deg,_#298FFF_0.18%,_#0778F5_79.28%)] text-white ">
               <FaFacebookF className="text-2xl" />
