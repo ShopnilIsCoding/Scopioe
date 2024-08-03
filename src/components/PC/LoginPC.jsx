@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import lgLogin from "../../assets/images/lgLogin.png";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,9 +8,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Form from "../Shared/Form";
 
-const LoginPC = () => {
+// eslint-disable-next-line react/prop-types
+const LoginPC = ({signUp,setSignUp}) => {
  
-  const [signUp, setSignUp] = useState(true);
 
   return (
     <div className="mx-auto container hidden lg:block p-12 ">

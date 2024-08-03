@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Login from './pages/Login';
+import 'animate.css';
 
 const router = createBrowserRouter([
   {
