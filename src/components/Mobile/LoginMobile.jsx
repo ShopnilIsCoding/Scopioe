@@ -1,6 +1,12 @@
 import { useState } from "react";
-import loginMobile from "../../assets/images/smLogin.png";
+import loginMobile from "../../assets/images/smLogin.jpg";
 import Form from "../Shared/Form";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
 
 const LoginMobile = ({signUp,setSignUp}) => {
     const [popup,setPopup]=useState(false);
@@ -11,13 +17,33 @@ const LoginMobile = ({signUp,setSignUp}) => {
     }
   return (
     <div className="block lg:hidden relative min-h-screen poppins">
-      <img
+      {/* <img
         src={loginMobile}
         alt=""
         className="absolute -z-10 w-full h-full"
-      />
+      /> */}
+      <Swiper
+            pagination={true}
+            spaceBetween={10}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper  w-full h-full min-h-screen"
+          >
+            <SwiperSlide>
+              <img className="min-h-screen" src={loginMobile} alt="Background image goes here" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="min-h-screen" src={loginMobile} alt="Background image goes here" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="min-h-screen" src={loginMobile} alt="Background image goes here" />
+            </SwiperSlide>
+          </Swiper>
 
-      <div className="absolute z-20 h-full w-full ">
+      <div className="absolute top-0 z-20 h-full w-full ">
         <img src="/LOGO.png" alt="Logo" className="flex mx-auto mt-12 animate__slideInDown animate__animated" />
 
         {!popup?
@@ -49,7 +75,7 @@ const LoginMobile = ({signUp,setSignUp}) => {
                         </div>}
                 <Form signUp={signUp} setSignUp={setSignUp}></Form>
                 </div>
-            }
+            } 
       </div>
     </div>
   );
