@@ -1,3 +1,10 @@
+# Scopioe
+
+Welcome to Scopioe, your go-to platform for Massage and therapy.
+
+## Live Site 
+Visit the live site [here](https://scopioetask.netlify.app).
+
 ## Credits
 Developed by Rahomotul Islam.
 

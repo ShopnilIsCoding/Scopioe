@@ -2,7 +2,7 @@
 export const testimonials = [
     {
       id: 1,
-      image: "../src/assets/images/testimonial/image 116.png",
+      image: "/images/testimonial/image 116.png",
       address: "123 Elm Street, New York",
       title: "Healing Bodywork",
       owner:"by Cort",
@@ -10,7 +10,7 @@ export const testimonials = [
     },
     {
       id: 2,
-      image: "../src/assets/images/testimonial/image 117.png",
+      image: "/images/testimonial/image 117.png",
       address: "123 Elm Street, New York",
       title: "Healing Bodywork",
       owner:"by Cort",
@@ -18,7 +18,7 @@ export const testimonials = [
     },
     {
       id: 3,
-      image: "../src/assets/images/testimonial/image 116.png",
+      image: "/images/testimonial/image 116.png",
       address: "123 Elm Street, New York",
       title: "Healing Bodywork",
       owner:"by Cort",
@@ -26,7 +26,7 @@ export const testimonials = [
     },
     {
         id: 4,
-        image: "../src/assets/images/testimonial/image 117.png",
+        image: "/images/testimonial/image 117.png",
         address: "123 Elm Street, New York",
         title: "Healing Bodywork",
         owner:"by Cort",
