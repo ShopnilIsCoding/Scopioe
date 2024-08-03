@@ -13,7 +13,7 @@ const RootLayout = () => {
                     </div>
                     <SideNav></SideNav>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 flex flex-col">
                     <Navbar></Navbar>
                     <Outlet></Outlet>
                 </div>
