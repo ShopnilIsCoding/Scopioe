@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import ErrorElement from './components/ErrorElement';
+import NewListing from './pages/NewListing';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<PrivateRoutes><Home></Home></PrivateRoutes>
+      },
+      {
+        path:'/new-listing',
+        element:<PrivateRoutes><NewListing></NewListing></PrivateRoutes>
       }
     ]
   },

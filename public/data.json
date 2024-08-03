@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "title": "Swedish Massage",
+      "description": "Relaxing full-body massage",
+      "price": "$70",
+      "time": "60 min",
+      "location": "Atlanta, GA",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Deep Tissue Massage",
+      "description": "Targeted muscle therapy",
+      "price": "$85",
+      "time": "60 min",
+      "location": "Indianapolis, IN",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Hot Stone Massage",
+      "description": "Therapeutic heated stones",
+      "price": "$90",
+      "time": "75 min",
+      "location": "Philadelphia, PA",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Aromatherapy Massage",
+      "description": "Massage with essential oils",
+      "price": "$75",
+      "time": "60 min",
+      "location": "Boston, MA",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Reflexology",
+      "description": "Foot massage therapy",
+      "price": "$65",
+      "time": "45 min",
+      "location": "Jacksonville, FL",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Prenatal Massage",
+      "description": "Therapy for expecting mothers",
+      "price": "$80",
+      "time": "60 min",
+      "location": "Queens, NY",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Sports Massage",
+      "description": "Focus on muscle recovery",
+      "price": "$95",
+      "time": "60 min",
+      "location": "Chicago, IL",
+      "image": "/dynamic.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Thai Massage",
+      "description": "Traditional Thai therapy",
+      "price": "$85",
+      "time": "90 min",
+      "location": "Houston, TX",
+      "image": "/dynamic.jpg"
+    }
+  ]
+  
