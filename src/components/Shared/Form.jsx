@@ -1,23 +1,31 @@
+/* eslint-disable react/prop-types */
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
-import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Form = ({ signUp, setSignUp }) => {
-  const { signIn, googleLogin, createUser, updateUserProfile, loading } = useContext(AuthContext);
+  // Access authentication functions and loading state from AuthContext
+  const { signIn, googleLogin, createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
+  // State for password visibility toggles
+  const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+
+  // Handle login form submission
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+
     signIn(email, password)
-      .then((res) => {
+      .then(() => {
         toast.success("Successfully logged in");
         navigate(location?.state ? location.state : "/");
       })
@@ -26,6 +34,7 @@ const Form = ({ signUp, setSignUp }) => {
       });
   };
 
+  // Handle registration form submission
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -36,25 +45,28 @@ const Form = ({ signUp, setSignUp }) => {
     const rePassword = form.get("rePassword");
     const acceptTerms = form.get("acceptTerms");
 
+    // Validate passwords match
     if (password !== rePassword) {
       toast.warning("Passwords do not match");
       return;
     }
 
+    // Validate terms acceptance
     if (!acceptTerms) {
       toast.warning("You must accept the terms of service");
       return;
     }
 
+    // Validate password strength
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordRegex.test(password)) {
       toast.error('Password must be at least 6 characters and contain at least one uppercase and one lowercase letter.');
       return;
     }
 
+    // Create user and update profile
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
         updateUserProfile(name, photo)
           .then(() => {
             toast.success('Registered Successfully');
@@ -72,11 +84,9 @@ const Form = ({ signUp, setSignUp }) => {
       });
   };
 
-  const [visible, setVisible] = useState(false);
-  const [visible2, setVisible2] = useState(false);
-
   return (
     <div>
+      {/* Third-party login buttons */}
       {!signUp && (
         <>
           <div className="flex justify-around items-center my-8">
@@ -100,7 +110,7 @@ const Form = ({ signUp, setSignUp }) => {
         </>
       )}
 
-      {/* form start */}
+      {/* Form start */}
       <form action="" className="space-y-4" onSubmit={signUp ? handleRegister : handleLogin}>
         {signUp && (
           <>
@@ -148,17 +158,13 @@ const Form = ({ signUp, setSignUp }) => {
           />
           {visible ? (
             <IoEyeOutline
-              onClick={() => {
-                setVisible(!visible);
-              }}
-              className="absolute z-20 cursor-pointer  right-2 top-[60%] translate-y-[50%]"
+              onClick={() => setVisible(!visible)}
+              className="absolute z-20 cursor-pointer right-2 top-[60%] translate-y-[50%]"
             />
           ) : (
             <IoEyeOffOutline
-              onClick={() => {
-                setVisible(!visible);
-              }}
-              className="absolute z-20 cursor-pointer  right-2 top-[60%] translate-y-[50%]"
+              onClick={() => setVisible(!visible)}
+              className="absolute z-20 cursor-pointer right-2 top-[60%] translate-y-[50%]"
             />
           )}
         </div>
@@ -177,17 +183,13 @@ const Form = ({ signUp, setSignUp }) => {
             />
             {visible2 ? (
               <IoEyeOutline
-                onClick={() => {
-                  setVisible2(!visible2);
-                }}
-                className="absolute z-20 cursor-pointer  right-2 top-[60%] translate-y-[50%]"
+                onClick={() => setVisible2(!visible2)}
+                className="absolute z-20 cursor-pointer right-2 top-[60%] translate-y-[50%]"
               />
             ) : (
               <IoEyeOffOutline
-                onClick={() => {
-                  setVisible2(!visible2);
-                }}
-                className="absolute z-20 cursor-pointer  right-2 top-[60%] translate-y-[50%]"
+                onClick={() => setVisible2(!visible2)}
+                className="absolute z-20 cursor-pointer right-2 top-[60%] translate-y-[50%]"
               />
             )}
           </div>
@@ -214,7 +216,7 @@ const Form = ({ signUp, setSignUp }) => {
         )}
         <button
           type="submit"
-          className="btn bg-light text-white px-10 w-[200px] py-4 flex  mx-auto"
+          className="btn bg-light text-white px-10 w-[200px] py-4 flex mx-auto"
         >
           {signUp ? "Sign up" : "Sign in"}
         </button>
@@ -223,16 +225,12 @@ const Form = ({ signUp, setSignUp }) => {
       <p className="mx-auto w-fit mt-4">
         {signUp ? "Already Have an Account? " : "Don’t Have an Account? "}
         <Link
-          onClick={() => {
-            setSignUp(!signUp);
-          }}
+          onClick={() => setSignUp(!signUp)}
           className="underline text-dark"
         >
           {signUp ? "Log in" : "Create Account"}
         </Link>
       </p>
-
-      {/* form end  */}
     </div>
   );
 };

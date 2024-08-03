@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import loginMobile from "../../assets/images/smLogin.jpg";
 import Form from "../Shared/Form";

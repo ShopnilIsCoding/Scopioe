@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaLocationDot } from "react-icons/fa6";
 
 
