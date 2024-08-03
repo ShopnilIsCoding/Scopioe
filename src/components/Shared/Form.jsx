@@ -1,11 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 // eslint-disable-next-line react/prop-types
 const Form = ({signUp,setSignUp}) => {
+
+  const {signIn,googleLogin}=useContext(AuthContext)
+    const navigate =useNavigate();
+    const location=useLocation();
+
+    const handleLogin=(e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email=form.get('email');
+        const password=form.get('password');
+        signIn(email,password)
+        .then( (res)=>
+    {
+        toast.success("Successfully logged in")
+        navigate(location?.state? location.state : '/')
+    })
+        .catch(()=>{
+            toast.warning('Invalid Credentials')
+        })
+    };
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
     return (

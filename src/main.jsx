@@ -9,6 +9,9 @@ import Login from './pages/Login';
 import 'animate.css';
 import RootLayout from './RootLayout/RootLayout';
 import Home from './pages/Home';
+import AuthProvider from './Providers/AuthProvider';
+import { ToastContainer } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    <ToastContainer />
+    </AuthProvider>
+    
   </React.StrictMode>,
 )
