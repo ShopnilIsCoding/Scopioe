@@ -6,14 +6,14 @@ import SideNav from "../components/Shared/SideNav";
 const RootLayout = () => {
     return (
         <div>
-            <div className="flex container mx-auto">
-                <div className="hidden lg:block min-w-[250px]">
+            <div className="flex container mx-auto ">
+                <div className="hidden lg:block ">
                     <div>
                         <img src="/LOGO.png" className="py-10 pt-14 w-fit mx-auto" alt="" />
                     </div>
                     <SideNav></SideNav>
                 </div>
-                <div className="flex-1 flex flex-col">
+                <div className=" ">
                     <Navbar></Navbar>
                     <Outlet></Outlet>
                 </div>
